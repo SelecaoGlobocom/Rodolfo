@@ -1,0 +1,25 @@
+{
+  "short_name": "Agenda | ge",
+  "name": "Agenda Globo Esporte",
+  "icons": [
+    {
+      "src": "fav-icon-16-x-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "fav-icon-32-x-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "fav-icon-192-x-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
