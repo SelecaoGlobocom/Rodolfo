@@ -60,10 +60,14 @@
 
 ___
 
+## Dia 02 (04/02/2021) - Desenvolvimento do FrontEnd (React)
+Utilizarei o comando `npx create-react-app ge-calendar --template typescript` pela praticidade de ter o ambiente de desenvolvimento pronto com apenas um comando.
+
 ## To Do
 - [X] Testar esportes-api no Postman e identificar os retornos.
 - [X] Criar a estrutura de dados que deverá ser retornada do middleware
 - [ ] Criar o Front-End
+  - [X] Iniciar ambiente de desenvolvimento (Create-react-app)
   - [ ] Card (componente reutilizável)
   - [ ] Container (calendário)
 - [ ] Criar o Middleware
