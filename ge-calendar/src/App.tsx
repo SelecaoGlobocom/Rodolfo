@@ -1,15 +1,19 @@
 import React from 'react';
-import { Card } from './components/Card/index'
+
+import { Card } from './components/Card/index';
+import { Container } from './components/Container';
 
 function App() {
   return (
-    <div style={{display:"flex", flexWrap:"wrap" }}>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-    </div>
+    <Container>
+      <Container isCard>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </Container>
+    </Container>
   );
 }
 
