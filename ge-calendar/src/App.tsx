@@ -1,20 +1,12 @@
 import React from 'react';
 
-import { Card } from './components/Card/index';
 import { Container } from './components/Container';
+import { Calendar } from './pages/Calendar/index';
 
-function App() {
-  return (
-    <Container>
-      <Container isCard>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </Container>
-    </Container>
-  );
-}
+const App = () => (
+  <Container>
+    <Calendar />
+  </Container>
+);
 
 export default App;
