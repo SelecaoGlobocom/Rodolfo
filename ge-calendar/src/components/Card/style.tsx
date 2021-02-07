@@ -60,17 +60,6 @@ export const Placar = styled.div`
     align-items: center;
 `;
 
-export const VejaComoFoi = styled.a`
-    color: rgb(6, 170, 72);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.14;
-    letter-spacing: -0.3px;
-    text-decoration-line: none;
-    text-decoration-style: initial;
-    text-decoration-color: initial;
-    text-decoration: none;
-`;
 export const Rodada = styled.span`
     font-size: 12px;
     font-weight: normal;
@@ -81,4 +70,21 @@ export const Rodada = styled.span`
     color: rgb(85, 85, 85);
     display: block;
     margin-top: 15px;
+`;
+
+export const Encerrado = styled.a`
+color: rgb(85, 85, 85);
+text-decoration: none;
+`;
+
+export const TempoReal = styled.a`
+    background-color: rgb(6, 170, 72);
+    color: rgb(255, 255, 255);
+    padding: 1px 4px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+    animation: 2s ease 0s infinite normal none running;
 `;
