@@ -73,6 +73,9 @@ Finalização da página estática e iniciar a utilização de dados dinâmicos 
 ## Dia 04 (06/02/2021) - Continuação do Desenvolvimento do FrontEnd (React)
 Finalização da dinâmica. Breve dificuldade para tratar Date no state, tive que realizar uma conversão para que viesse a funcionar como esperado.
 
+## Dia 05 (07/02/2021) - Desenvolvimento de testes no FrontEnd (React)
+Início dos testes de renderização do Front-End
+
 ## To Do
 - [X] Testar esportes-api no Postman e identificar os retornos.
 - [X] Criar a estrutura de dados que deverá ser retornada do middleware
@@ -80,4 +83,5 @@ Finalização da dinâmica. Breve dificuldade para tratar Date no state, tive qu
   - [X] Iniciar ambiente de desenvolvimento (Create-react-app)
   - [X] Card (componente reutilizável)
   - [X] Container (calendário)
+  - [ ] Teste unitário
 - [ ] Criar o Middleware
