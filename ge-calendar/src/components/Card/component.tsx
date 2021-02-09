@@ -17,9 +17,8 @@ export const Card = ({ jogo: { mandante, visitante, rodada, hora_realizacao, dat
     const [status, setStatus] = useState("");
 
     useEffect(() => {
-        const date = new Date();
-        date.setFullYear(2019)
-        getMatchStatus(date)
+        actualDate.setFullYear(2019)
+        getMatchStatus(actualDate)
     }, [])
 
     const getMatchStatus = (date: Date) => {
