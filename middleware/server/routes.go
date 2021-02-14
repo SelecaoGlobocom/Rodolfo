@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-func GetDataByDate(date string) models.ServerData {
+func GetDataByDate(date string) (models.ServerData, error, int) {
 
 	clientData := models.CampeonatosClientApi{}
 	serverData := models.ServerData{}
@@ -20,14 +20,22 @@ func GetDataByDate(date string) models.ServerData {
 	response, error := http.Get(url)
 	if error != nil {
 		fmt.Printf("The HTTP request failed with error %s\n", error)
+		return serverData, error, response.StatusCode
 	} else {
-		data, _ := ioutil.ReadAll(response.Body)
+		data, error := ioutil.ReadAll(response.Body)
+		log.Printf("data: %v", data)
+		if error != nil {
+			log.Printf("Body read error: %v", error)
+			return serverData, error, response.StatusCode
+		}
+
 		err := json.Unmarshal(data, &clientData)
 		if err != nil {
-			log.Fatal("Decoding error: ", err)
+			log.Printf("JSON unmarshal error, %v", err)
+			return serverData, err, response.StatusCode
 		}
 
 		serverData = utils.ParseData(clientData, serverData)
 	}
-	return serverData
+	return serverData, nil, response.StatusCode
 }
