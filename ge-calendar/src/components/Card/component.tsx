@@ -46,7 +46,9 @@ export const Card = ({ jogo: { mandante, visitante, rodada, hora_realizacao, dat
             </Header>
             <TimeContainer>
                 <Time>
-                    <img height="24px" width="24px" alt="escudo" src={mandante.escudos['30x30']} />
+                    <img height="24px" width="24px" alt="escudo" src={
+                        mandante.bandeiras['30x30']
+                        } />
                     <span style={{ marginLeft: '12px' }}>{mandante.nome}</span>
                 </Time>
                 <Placar>
@@ -55,7 +57,7 @@ export const Card = ({ jogo: { mandante, visitante, rodada, hora_realizacao, dat
             </TimeContainer>
             <TimeContainer>
                 <Time>
-                    <img height="24px" width="24px" alt="escudo" src={visitante.escudos['30x30']} />
+                    <img height="24px" width="24px" alt="escudo" src={visitante.bandeiras['30x30']} />
                     <span style={{ marginLeft: '12px' }}>{visitante.nome}</span>
                 </Time>
                 <Placar>

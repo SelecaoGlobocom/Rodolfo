@@ -1,4 +1,4 @@
-import { JogoType } from '../../api/interface'
+import { JogoType } from '../../hooks/useFetch/interface'
 
 export type CardType = {
     jogo: JogoType,
