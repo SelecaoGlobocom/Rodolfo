@@ -22,6 +22,19 @@ export const Card = ({ jogo: { mandante, visitante, rodada, hora_realizacao, dat
     }, [])
 
     const getMatchStatus = (date: Date) => {
+        const [ano, mes, dia] = data_realizacao.split("-")
+        const nowDate = new Date()
+        nowDate.setFullYear(2019)
+        console.log(parseInt(ano) > nowDate.getFullYear() || parseInt(mes) > nowDate.getMonth() + 1 || parseInt(dia) > nowDate.getDate())
+        if (
+            parseInt(ano) > nowDate.getFullYear() ||
+            parseInt(mes) > nowDate.getMonth() + 1 ||
+            parseInt(dia) > nowDate.getDate()
+        ) {
+            setStatus(hora_realizacao.slice(0, 5))
+            return
+        }
+
         const dateMillis = Date.parse(date.toString());
         const matchTime = Date.parse(data_realizacao + 'T' + hora_realizacao)
         if (dateMillis - matchTime < 0) {
@@ -48,7 +61,7 @@ export const Card = ({ jogo: { mandante, visitante, rodada, hora_realizacao, dat
                 <Time>
                     <img height="24px" width="24px" alt="escudo" src={
                         mandante.bandeiras['30x30']
-                        } />
+                    } />
                     <span style={{ marginLeft: '12px' }}>{mandante.nome}</span>
                 </Time>
                 <Placar>
