@@ -2,6 +2,7 @@ package utils
 
 import (
 	"middleware/models"
+	"strconv"
 )
 
 func ParseData(clientData models.CampeonatosClientApi, serverData models.ServerData) models.ServerData {
@@ -41,18 +42,17 @@ func ParseData(clientData models.CampeonatosClientApi, serverData models.ServerD
 				jogoFiltrado.Wo = n.Wo
 
 				// Arrumar placar do penalti: nil tipado
+				if n.PlacarPenaltisMandante == 0 || n.PlacarPenaltisVisitante == 0 {
+					jogoFiltrado.Mandante.Placar = strconv.Itoa(n.PlacarOficialMandante)
+				} else {
+					jogoFiltrado.Mandante.Placar = strconv.Itoa(n.PlacarOficialMandante) + "(" + strconv.Itoa(n.PlacarPenaltisMandante) + ")"
+				}
 
-				// if n.PlacarPenaltisMandante == nil {
-				// 	jogoFiltrado.Mandante.Placar = strconv.Itoa(n.PlacarOficialMandante)
-				// } else {
-				// 	jogoFiltrado.Mandante.Placar = strconv.Itoa(n.PlacarOficialMandante) + strconv.Itoa(n.PlacarOficialMandante)
-				// }
-
-				// if n.PlacarPenaltisVisitante == nil {
-				// 	jogoFiltrado.Visitante.Placar = strconv.Itoa(n.PlacarOficialVisitante)
-				// } else {
-				// 	jogoFiltrado.Visitante.Placar = strconv.Itoa(n.PlacarOficialVisitante) + strconv.Itoa(n.PlacarOficialVisitante)
-				// }
+				if n.PlacarPenaltisMandante == 0 || n.PlacarPenaltisVisitante == 0 {
+					jogoFiltrado.Visitante.Placar = strconv.Itoa(n.PlacarOficialVisitante)
+				} else {
+					jogoFiltrado.Visitante.Placar = strconv.Itoa(n.PlacarOficialVisitante) + "(" + strconv.Itoa(n.PlacarPenaltisVisitante) + ")"
+				}
 
 				for _, t := range clientData.Referencias.Equipes {
 					if n.EquipeMandanteID == t.EquipeID {
