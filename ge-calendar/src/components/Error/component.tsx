@@ -1,9 +1,14 @@
 import React from 'react';
 
-import { ErrorContainer } from './style'
+import { ErrorContainer, H2, P } from './style'
+
+import { Ball } from '../../assets/index'
 
 export const Error = () => (
     <ErrorContainer>
-        Não haverá jogo nessa data.
+        <Ball />
+        <H2>Que Bola fora!</H2>
+        <P>Ocorreu um erro ao carregar esse conteúdo.</P>
+        <P>Por favor, tente novamente.</P>
     </ErrorContainer>
 )
