@@ -10,7 +10,7 @@ function useFetch<T = unknown>(
 ): State {
   const cache = useRef<Cache>({})
   const cancelRequest = useRef<boolean>(false)
-  const url = "http://localhost:3333/agenda/" + date.toISOString().split('T')[0]
+  const url = process.env.REACT_APP_MIDDLEWARE_URL + date.toISOString().split('T')[0]
 
   const initialState: State = {
     status: 'init',
