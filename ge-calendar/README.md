@@ -1,6 +1,6 @@
 # Bem-vindo ao GE Calendar
 
-Este front-end apresenta o calendário do GE, desenvolvido pelo Rodolfo Vieira em um desafio no processo seletivo para a Globo.
+Este front-end apresenta o calendário do Globo Esporte, desenvolvido pelo Rodolfo Vieira em um desafio no processo seletivo para a Globo.
 
 Este front-end foi gerado utilizando o [Create React App](https://github.com/facebook/create-react-app).
 
