@@ -25,7 +25,7 @@ export const Card = ({ jogo: { mandante, visitante, rodada, hora_realizacao, dat
         const [ano, mes, dia] = data_realizacao.split("-")
         const nowDate = new Date()
         nowDate.setFullYear(2019)
-        console.log(parseInt(ano) > nowDate.getFullYear() || parseInt(mes) > nowDate.getMonth() + 1 || parseInt(dia) > nowDate.getDate())
+
         if (
             parseInt(ano) > nowDate.getFullYear() ||
             parseInt(mes) > nowDate.getMonth() + 1 ||

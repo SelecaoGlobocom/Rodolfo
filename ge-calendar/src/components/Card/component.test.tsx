@@ -4,6 +4,7 @@ import '@testing-library/jest-dom/extend-expect'
 
 const actualDateMock = new Date();
 actualDateMock.setFullYear(2019)
+
 const jogoMock = {
     "jogo_id": 12,
     "vencedor_jogo": {
@@ -21,7 +22,7 @@ const jogoMock = {
         id: 333,
         nome: "Santos",
         placar: "4",
-        escudos: {
+        bandeiras: {
             '60x60': "url-60x60.png",
             '30x30': "url-30x30.png",
             '45x45': "url-45x45.png",
@@ -32,7 +33,7 @@ const jogoMock = {
         id: 44,
         nome: "Grêmio",
         placar: "1",
-        escudos: {
+        bandeiras: {
             '60x60': "url-60x60.png",
             '30x30': "url-30x30.png",
             '45x45': "url-45x45.png",

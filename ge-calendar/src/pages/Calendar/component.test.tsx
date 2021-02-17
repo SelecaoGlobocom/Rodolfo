@@ -1,16 +1,30 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'
-
+import { renderHook, act } from '@testing-library/react-hooks';
 import { Calendar } from './index'
 
-import { getData } from '../../api/index';
+import useFetch from '../../hooks/useFetch';
 
 const setup = () => render(<Calendar />);
 
+const generateDate = () => {
+    const genDate = new Date()
+    genDate.setFullYear(2019)
+    return genDate
+}
+
 const getListSize = () => {
-    const mockDate = getData(new Date().toISOString().slice(0, 10))
+    const {
+        result: {
+            current: {
+                data
+            }
+        }
+    } = renderHook(() => useFetch(generateDate()));
+
     let valor = 0;
-    mockDate.campeonatos.forEach((campeonato) => {
+
+    data?.campeonatos.forEach((campeonato) => {
         campeonato.jogos.forEach(() => {
             valor = valor + 1
         })
